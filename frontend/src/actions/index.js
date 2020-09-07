@@ -43,7 +43,7 @@ export const login = password => {
     return async (dispatch) => {
         await dispatch(tryLogin())
         try {
-            const { data } = await axios.post('http://localhost:3030/api/login', {
+            const { data } = await axios.post(`${process.env.REACT_APP_API}/api/login`, {
                 password: password
             })
             if (data.result === 'ok') {
