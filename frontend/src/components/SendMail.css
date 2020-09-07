@@ -1,0 +1,103 @@
+.send-mail {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(25, 34 , 54, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+
+
+.send-mail__container {
+    z-index: 1000000;
+    background-color: #fff;
+    width: 800px;
+    height: 500px;
+    padding: 20px 30px;
+    display: flex;
+    position: relative;
+}
+
+.send-mail__close {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.send-mail__form-container {
+    width: 50%;
+    margin-right: 5px;
+}
+
+.send-mail__userinfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.send-mail__input {
+    height: 40px;
+    outline: none;
+}
+
+.send-mail__input[type='text'] {
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.send-mail__username {
+    margin-right: 2px;
+    width: 35%;
+}
+
+.send-mail__email {
+    width: 65%;
+}
+
+.send-mail__title {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.send-mail__textarea {
+    width: 100%;
+    height: 250px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    resize: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.send-mail__cover-wrapper {
+    display: flex;
+    align-items: center;
+    width: 365px;
+    height: 100%;
+}
+
+.send-mail__cover {
+    background: var(--primary);
+    border-radius: 100%;
+    width: 365px;
+    height: 365px;
+    transform: scale(0.9);
+}
+
+@media screen and (max-width: 960px) {
+    .send-mail__form-container {
+        width: 100%;
+    }
+
+    .send-mail__close {
+        position: absolute;
+        right: 35px;
+        transform: scale(1.3);
+    }
+}

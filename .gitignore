@@ -1,0 +1,7 @@
+/backend/node_modules
+/backend/blog
+/backend/images
+/backend/.env
+
+/frontend/node_modules
+/frontend/.env

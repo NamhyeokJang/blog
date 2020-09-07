@@ -1,0 +1,36 @@
+.top-section {
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: var(--primary);
+}
+
+.top-section__cover {
+    background-image: url(/image/background_1.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out;
+}
+
+.top-section__cover-title {
+    font-size: 3rem;
+    color: #000;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;  
+}
+
+@media screen and (max-width: 960px) {
+    .top-section__cover {
+        height: 250px;
+    }
+
+    .top-section__cover-title {
+        font-size: 1.6rem;
+    }
+}

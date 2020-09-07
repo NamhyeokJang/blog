@@ -1,0 +1,22 @@
+const path = require('path');
+const Sequelize = require('sequelize');
+require('dotenv').config()
+
+const env = process.env.NODE_ENV || 'development';
+const config = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
+const db = {};
+
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+db.Blog = require('./blog')(sequelize, Sequelize)
+db.Tag = require('./tag')(sequelize, Sequelize)
+db.BlogTag = require('./blogTag')(sequelize, Sequelize)
+
+db.Blog.belongsToMany(db.Tag, { through: db.BlogTag })
+db.Tag.belongsToMany(db.Blog, { through: db.BlogTag })
+
+
+module.exports = db;

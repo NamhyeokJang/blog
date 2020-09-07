@@ -1,0 +1,130 @@
+.header {
+    background: var(--primary);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.header__logo-wrapper {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.header__logo {
+    height: 60%;
+    object-fit: cover;
+}
+
+.header__menu-controll {
+    display: none;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.header__menu-item {
+    height: 100%;
+    border-bottom: 2px solid transparent;
+}
+
+.header__link {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 1rem;
+}
+
+.header__link:hover {
+    border-bottom: 2px solid var(--red);
+}
+
+.header__btn-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header__auth {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+    .header__menu-controll {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .header__menu {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: #1c2237;
+        transition: all 0.5s ease;
+    }
+
+    .header__menu.active {
+        left: 0;
+    }
+
+    .header__menu-item {
+        width: 70%;
+        height: 60px;
+    }
+
+    .header__link {
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem; /* 보류 */
+    }
+
+    .header__link:hover {
+        color: var(--red);
+        border: none;
+    }
+
+    .header__auth {
+        font-size: 1.5rem;
+    }
+
+    .header__auth:hover {
+        color: var(--red);
+    }
+
+}

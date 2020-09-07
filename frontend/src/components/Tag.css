@@ -1,0 +1,7 @@
+.tag__container {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+    color: #fff;
+    z-index: 100;
+}

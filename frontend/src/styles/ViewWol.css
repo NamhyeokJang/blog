@@ -1,0 +1,21 @@
+.wol__container {
+    margin-top: 20px;
+}
+
+.wol__deskInfo {
+    display: flex;
+    align-items: baseline;
+}
+
+.wol__deskInfo span {
+    font-size: 1.6em;
+    margin-left: 0.6em;
+}
+
+.wol__icon {
+    font-size: 3em;
+}
+
+.wol__icon:hover {
+    cursor: pointer;
+}

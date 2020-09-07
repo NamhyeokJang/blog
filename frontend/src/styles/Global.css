@@ -1,0 +1,37 @@
+/* Global Styles */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css');
+
+@font-face {
+  font-family: 'MaplestoryOTFBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #192236;
+  --red: #ff0038;
+  --yellow: #ffff9f;
+  --blue: #000080;
+  
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'MaplestoryOTFBold';
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+}
