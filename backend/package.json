@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "seed": "node ./seeders"
+    "seed": "node ./seeders",
+    "service": "pm2 start --name 'blog' ./bin/www",
+    "stop": "pm2 stop ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
