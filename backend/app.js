@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(require('./routes'))
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public/index.html'))
+  res.sendFile(path.resolve(__dirname, 'build/index.html'))
 })
 
 // catch 404 and forward to error handler

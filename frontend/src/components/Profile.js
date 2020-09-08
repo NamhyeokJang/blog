@@ -36,6 +36,10 @@ export default ({ _close }) => {
                     <span className='profile__wol-text'>{deskOn ? 'On' : 'Off'}</span>
                 </div>
                 <h3
+                    className='profile__menu'>
+                    Blog Upload
+                </h3>
+                <h3
                     className='profile__logout'
                     onClick={() => dispatch(logout())}>
                     Logout</h3>

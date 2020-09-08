@@ -29,6 +29,16 @@
     cursor: pointer;
 }
 
+.profile__menu {
+    margin-top: 10px;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.profile__menu:hover {
+    color: #74b9ff;
+}
+
 .profile__logout {
     margin-top: 10px;
     color: var(--red);
@@ -70,6 +80,11 @@
 
     .profile__wol-text {
         color: #fff;
+    }
+
+    .profile__menu {
+        color: #fff;
+        font-size: 2rem;
     }
 
     .profile__logout {

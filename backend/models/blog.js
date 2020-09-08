@@ -11,8 +11,14 @@ module.exports = (sequelize, DataTypes) => {
         cover: {
             type: DataTypes.STRING(200)
         },
-        description: {
-            type: DataTypes.STRING(300)
+        tag: {
+            type: DataTypes.STRING,
+            get: function () {
+                return JSON.parse(this.getDataValue('tag'));
+            },
+            set: function (val) {
+                return this.setDataValue('tag', JSON.stringify(val));
+            }
         },
         updatedAt: {
             type: DataTypes.DATE,

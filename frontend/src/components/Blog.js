@@ -5,7 +5,7 @@ import Tag from './Tag'
 
 import './Blog.css'
 
-export default ({ data: { title, filename, cover, description, updatedAt, tags } }) => {
+export default ({ data: { title, filename, cover, updatedAt, tag } }) => {
     const date = new Date(updatedAt).toISOString().substring(0, 10)
     return (
         <Link to={`/blog/${filename}`}>
@@ -16,11 +16,10 @@ export default ({ data: { title, filename, cover, description, updatedAt, tags }
                 <div>
                     <div className='blog__info'>
                         <h1>{title}</h1>
-                        <p className='blog__desc'>{description}</p>
                     </div>
                     <div className='blog__tag-wrapper'>
-                        {tags.map((tag, index) =>
-                            <Tag key={index}>{tag.name}</Tag>)
+                        {tag.map((tag, index) =>
+                            <Tag key={index}>{tag}</Tag>)
                         }
                     </div>
                     <p className='blog__date'>작성일: {date}</p>

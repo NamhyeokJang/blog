@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux'
 import { deviceMobile, deviceWeb } from './actions'
 import {
   ViewMain,
-  ViewLogin,
-  ViewWol,
   ViewBlogList,
   ViewBlog,
   Error
@@ -35,8 +33,6 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/' component={ViewMain} />
-        <Route exact path='/login' component={ViewLogin} />
-        <Route exact path='/wol' component={ViewWol} />
         <Route exact path='/blog' component={ViewBlogList} />
         <Route exact path='/blog/:filename' component={ViewBlog} />
         <Route component={Error} />

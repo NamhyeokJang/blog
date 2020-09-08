@@ -12,11 +12,5 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.Blog = require('./blog')(sequelize, Sequelize)
-db.Tag = require('./tag')(sequelize, Sequelize)
-db.BlogTag = require('./blogTag')(sequelize, Sequelize)
-
-db.Blog.belongsToMany(db.Tag, { through: db.BlogTag })
-db.Tag.belongsToMany(db.Blog, { through: db.BlogTag })
-
 
 module.exports = db;

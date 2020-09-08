@@ -6,6 +6,7 @@ const IMAGE_PATH = './images'
 
 router.get('/:filename', (req, res) => {
     const { filename } = req.params
+
     fs.readFile(path.join(IMAGE_PATH, filename), (err, data) => {
         res.send(data)
     })
