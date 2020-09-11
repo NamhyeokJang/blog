@@ -1,3 +1,21 @@
 .view-blog {
     min-height: 75vh;
 }
+
+.view-blog__auth {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.view-blog__menu {
+    cursor: pointer;
+}
+
+.view-blog__menu:hover {
+    color: var(--red);
+}
+
+.view-blog__contents {
+    margin-top: 30px;
+}

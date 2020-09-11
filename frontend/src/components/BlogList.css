@@ -1,20 +1,15 @@
-.blog-list__auth {
-    display: flex;
-    align-items: center;
-    height: 50px;
-}
-
-.blog-list__menu {
-    cursor: pointer;
-}
-
-.blog-list__menu:hover {
-    color: var(--red);
-}
-
 .blog-list__contents {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 30px;
+}
+
+.blog-list__contents > * {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .blog-list__contents > * {
+        margin-bottom: 10px;
+    }
 }

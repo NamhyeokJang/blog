@@ -13,7 +13,7 @@
 .header__container {
     display: flex;
     justify-content: space-between;
-    height: 80px;
+    height: 100%;
 }
 
 .header__logo-wrapper {

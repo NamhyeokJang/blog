@@ -5,6 +5,7 @@ import { TopSection } from '../components'
 import './ViewMain.css'
 
 export default () => {
+
     return (
         <>
             <Helmet>

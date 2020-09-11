@@ -14,6 +14,7 @@ export default ({ match: { params: { filename } } }) => {
 
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const h1 = document.getElementsByTagName('h1')
         fetchMd(filename).then(res => {
             setMd(res)

@@ -1,7 +1,7 @@
 .top-section {
     width: 100%;
-    height: calc(100vh - 80px);
     background: var(--primary);
+    padding-bottom: 30px;
 }
 
 .top-section__cover {
@@ -25,6 +25,12 @@
     1px 1px 0 #fff;  
 }
 
+.top-section__blogs-title{
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 @media screen and (max-width: 960px) {
     .top-section__cover {
         height: 250px;
@@ -32,5 +38,11 @@
 
     .top-section__cover-title {
         font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .top-section__cover {
+        height: 200px;
     }
 }

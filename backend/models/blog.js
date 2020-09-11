@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
         cover: {
             type: DataTypes.STRING(200)
         },
+        description: {
+            type: DataTypes.STRING
+        },
         tag: {
             type: DataTypes.STRING,
             get: function () {

@@ -1,12 +1,21 @@
 import axios from 'axios'
+import qs from 'query-string'
 import { colors, randomColor } from './colors'
 
 export const BASE_URL = process.env.REACT_APP_API
 
-export const fetchBlogs = async () => {
-    const { data: { blogs } } = await axios.get(`${BASE_URL}/api/blogs`)
+export const fetchBlogs = async (page, limit) => {
+    let query = {
+        page: page ? page : null,
+        limit: limit ? limit : null
+    }
 
-    return blogs
+    const { data: { blogs: { rows, count } } } = await axios.get(`${BASE_URL}/api/blogs?${qs.stringify(query)}`)
+
+    return {
+        blogs: rows,
+        count: count
+    }
 }
 
 export const fetchMd = async (filename) => {
