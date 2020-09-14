@@ -67,6 +67,17 @@ router.post('/', upload.fields([{ name: 'md' }, { name: 'cover' }]), async (req,
     res.json({ result: 'ok', blog: addBlog })
 })
 
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params
+    await Blog.destroy({
+        where: {
+            id: id
+        }
+    })
+
+    res.end()
+})
+
 //md파일 
 router.get('/md/:filename', (req, res) => {
     const { filename } = req.params

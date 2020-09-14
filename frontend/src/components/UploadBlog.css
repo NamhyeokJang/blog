@@ -14,7 +14,7 @@
 .upload-blog__form {
     position: relative;
     width: 400px;
-    height: 400px;
+    height: 600px;
     background: #fff;
     border-radius: 4px;
     padding: 20px 40px;
@@ -76,4 +76,10 @@
 
 .upload-blog input[type='file'] {
     display: none;
+}
+
+.upload-blog__textarea {
+    width: 320px;
+    height: 200px;
+    resize: none;
 }

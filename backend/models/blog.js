@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(200)
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(300)
         },
         tag: {
             type: DataTypes.STRING,

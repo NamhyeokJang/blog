@@ -1,0 +1,79 @@
+.view-edit-blog {
+    min-height: 50vh;
+}
+
+.view-edit-blog__menu-container {
+    display: flex;
+    height: 45px;
+    align-items: center;
+}
+
+.view-edit-blog__menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.view-edit-blog__contents {
+
+}
+
+/* Edit_Blog */
+.edit-blog {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.edit-blog__cover {
+    width: 250px;
+    height: 200px;
+    margin-right: 10px;
+}
+
+.edit-blog__info-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.edit-blog__info-wrapper p {
+    margin-bottom: 5px;
+}
+
+.edit-blog__title {
+    font-size: 1.3rem;
+}
+
+.edit-blog__desc {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */ 
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    overflow: hidden;
+}
+
+.edit-blog__md {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* 라인수 */ 
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    overflow: hidden;
+}
+
+.edit-blog__updatedAt {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* 라인수 */ 
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    overflow: hidden;
+}
+
+.edit-blog__delete {
+    position: absolute;
+    font-size: 1.3rem;
+    color: red;
+    cursor: pointer;
+    bottom: 0;
+}

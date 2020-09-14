@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { FaTimes } from 'react-icons/fa'
 import { logout } from '../actions'
@@ -35,10 +36,12 @@ export default ({ _close }) => {
                     </i>
                     <span className='profile__wol-text'>{deskOn ? 'On' : 'Off'}</span>
                 </div>
-                <h3
-                    className='profile__menu'>
-                    Blog Upload
-                </h3>
+                <Link to='/edit/blog' onClick={() => _close()}>
+                    <h3
+                        className='profile__menu'>
+                        Blog Upload
+                    </h3>
+                </Link>
                 <h3
                     className='profile__logout'
                     onClick={() => dispatch(logout())}>

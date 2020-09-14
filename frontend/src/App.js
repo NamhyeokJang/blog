@@ -5,6 +5,7 @@ import { deviceMobile, deviceWeb } from './actions'
 import {
   ViewMain,
   ViewBlogList,
+  ViewEditBlog,
   ViewBlog,
   Error
 } from './pages'
@@ -35,6 +36,7 @@ function App() {
         <Route exact path='/' component={ViewMain} />
         <Route exact path='/blog' component={ViewBlogList} />
         <Route exact path='/blog/:filename' component={ViewBlog} />
+        <Route exact path='/edit/blog' component={ViewEditBlog} />
         <Route component={Error} />
       </Switch>
       <Footer />
