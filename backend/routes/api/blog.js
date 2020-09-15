@@ -17,10 +17,6 @@ const storage = multer.diskStorage({
             cb(null, BLOG_PATH)
         }
     },
-    filename: (req, file, cb) => {
-        const filename = `${file.originalname.split('.')[0]}-${moment().format("MMM Do YY")}`
-        cb(null, filename)
-    }
 })
 
 const upload = multer({ storage })
