@@ -36,6 +36,7 @@ export default ({ _close, _update }) => {
 
     const handleUploadMarkdown = e => {
         setMd(e.target.files[0])
+        setTitle(e.target.files[0].name.split('.')[0])
         const reader = new FileReader()
         reader.onload = () => setDesc(reader.result.substring(0, 300))
         reader.readAsText(e.target.files[0])
@@ -50,6 +51,7 @@ export default ({ _close, _update }) => {
                 <input
                     className='upload-blog__text'
                     type='text' placeholder='title'
+                    value={title}
                     onChange={e => setTitle(e.target.value)} />
                 <input
                     className='upload-blog__text'
