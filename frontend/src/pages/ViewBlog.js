@@ -15,10 +15,10 @@ export default ({ match: { params: { filename } } }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        const h1 = document.getElementsByTagName('h1')
+        const header = document.getElementsByTagName('h2')
         fetchMd(filename).then(res => {
             setMd(res)
-            setTitle(h1[0].innerHTML)
+            setTitle(header[0].innerHTML)
             return
         })
     }, [filename])

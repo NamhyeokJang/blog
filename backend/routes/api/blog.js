@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const multer = require('multer')
+const moment = require('moment')
 const fs = require('fs');
 const path = require('path')
 const { Blog } = require('../../models');
@@ -17,7 +18,8 @@ const storage = multer.diskStorage({
         }
     },
     filename: (req, file, cb) => {
-        cb(null, file.originalname)
+        const filename = `${file.originalname.split('.')[0]}-${moment().format("MMM Do YY")}`
+        cb(null, filename)
     }
 })
 
@@ -54,10 +56,9 @@ router.post('/', upload.fields([{ name: 'md' }, { name: 'cover' }]), async (req,
     const { title, tags, description } = req.body
     const md = req.files.md[0]
     const cover = req.files.cover ? req.files.cover[0].originalname : images[parseInt(Math.random() * images.length) + 1]
-
     const addBlog = await Blog.create({
         title: title,
-        filename: md.originalname,
+        filename: md.filename,
         cover: cover,
         description: description,
         tag: tags ? tags.split(',') : null,

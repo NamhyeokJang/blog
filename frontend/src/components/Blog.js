@@ -19,8 +19,8 @@ export default ({ data: { title, filename, cover, description, updatedAt, tag },
                 </div>
                 <div className='blog__info-wrapper'>
                     <div className='blog__info'>
-                        <h1>{title}</h1>
-                        <p>{description}</p>
+                        <p className='blog__title'>{title}</p>
+                        <p className='blog__desc'>{description}</p>
                     </div>
                     <div className='blog__tag-wrapper'>
                         {tags.map((tag, index) =>
