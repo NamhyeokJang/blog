@@ -1,0 +1,52 @@
+@import '~codemirror/lib/codemirror.css';
+@import '~@toast-ui/editor/dist/toastui-editor.css';
+
+.write-blog * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.write-blog {
+    display: flex;
+    flex-direction: column;
+}
+
+.write-blog-container {
+    padding: 0 20px;
+}
+
+.write-blog {
+    min-height: 100vh;
+}
+
+.write-blog__title {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.write-blog__title[type='text'] {
+    font-size: 1.5rem;
+}
+
+.write-blog__input-tag {
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.write-blog__tag-wrapper {
+    display: flex;
+}
+
+.write-blog__tag {
+    padding: 0 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    background: #e4e4f4;
+}
+
+.write-blog__submit {
+    margin-top: 10px;
+}

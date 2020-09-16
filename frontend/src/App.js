@@ -6,6 +6,7 @@ import {
   ViewMain,
   ViewBlogList,
   ViewEditBlog,
+  ViewWriteBlog,
   ViewBlog,
   Error
 } from './pages'
@@ -37,6 +38,7 @@ function App() {
         <Route exact path='/blog' component={ViewBlogList} />
         <Route exact path='/blog/:filename' component={ViewBlog} />
         <Route exact path='/edit/blog' component={ViewEditBlog} />
+        <Route exact path='/edit/blog/new' component={ViewWriteBlog} />
         <Route component={Error} />
       </Switch>
       <Footer />

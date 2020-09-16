@@ -18,4 +18,17 @@ router.get('/:filename', (req, res) => {
     })
 })
 
+router.get('/md/:filename', (req, res) => {
+    const { filename } = req.params
+    const isOriginal = req.query.original ? true : false
+
+    fs.readFile(path.join(BLOG_IMAGES, filename), (err, data) => {
+        if (isOriginal) return res.send(data)
+        sharp(data)
+            .resize(320, 240)
+            .toBuffer()
+            .then(data => res.send(data))
+    })
+})
+
 module.exports = router

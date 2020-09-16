@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL, fetchBlogs, Portal } from '../utils'
 import { UploadBlog } from '../components'
@@ -11,6 +11,7 @@ export default () => {
     const [count, setCount] = useState(0)
     const [upload, setUpload] = useState(false)
     const [page, setPage] = useState(1)
+    const history = useHistory()
 
     useEffect(() => {
         fetchBlogs(page).then(data => {
@@ -19,9 +20,9 @@ export default () => {
         })
     }, [page])
 
-    const deleteBlog = async (id) => {
-        await axios.delete(`${BASE_URL}/api/blogs/${id}`)
-        const updatedBlog = blogs.filter((blog) => blog.id !== id)
+    const deleteBlog = async (filename) => {
+        await axios.delete(`${BASE_URL}/api/blogs/${filename}`)
+        const updatedBlog = blogs.filter((blog) => blog.filename !== filename)
 
         setBlog(updatedBlog)
     }
@@ -33,6 +34,7 @@ export default () => {
             <div className='view-edit-blog container'>
                 <div className='view-edit-blog__menu-container'>
                     <h1 className='view-edit-blog__menu' onClick={() => setUpload(true)}>Upload</h1>
+                    <h1 className='view-edit-blog__menu' onClick={() => history.push('/edit/blog/new')}>Write</h1>
                 </div>
                 <div className='view-edit-blog__contents'>
                     {blogs.map((blog, index) => <Blog key={index} data={blog} _delete={deleteBlog} />)}
@@ -61,7 +63,7 @@ const Blog = ({ data, _delete }) => {
                     <p className='edit-blog__md'>md: {data.filename}</p>
                     <p className='edit-blog__updatedAt'>updatedAt: {data.updatedAt}</p>
                 </Link>
-                <p className='edit-blog__delete' onClick={() => _delete(data.id)}>Delete</p>
+                <p className='edit-blog__delete' onClick={() => _delete(data.filename)}>Delete</p>
             </div>
         </div>
     )

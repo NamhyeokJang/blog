@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const multer = require('multer')
-const moment = require('moment')
+const uf = require('unique-filename')
 const fs = require('fs');
 const path = require('path')
 const { Blog } = require('../../models');
@@ -50,6 +50,7 @@ router.get('/', async (req, res) => {
 router.post('/', upload.fields([{ name: 'md' }, { name: 'cover' }]), async (req, res) => {
     const images = fs.readdirSync(IMAGE_PATH)
     const { title, tags, description } = req.body
+    console.log('tags', tags)
     const md = req.files.md[0]
     const cover = req.files.cover ? req.files.cover[0].originalname : images[parseInt(Math.random() * images.length) + 1]
     const addBlog = await Blog.create({
@@ -64,14 +65,39 @@ router.post('/', upload.fields([{ name: 'md' }, { name: 'cover' }]), async (req,
     res.json({ result: 'ok', blog: addBlog })
 })
 
-router.delete('/:id', async (req, res) => {
-    const { id } = req.params
-    await Blog.destroy({
-        where: {
-            id: id
-        }
+//Blog Upload String
+router.post('/write', async (req, res) => {
+    const images = fs.readdirSync(IMAGE_PATH)
+    const { title, content, tags } = req.body
+    const description = content.substring(0, 300)
+    const filename = uf('') + uf('')
+    const cover = images[parseInt(Math.random() * images.length) + 1]
+    fs.writeFile(`./blog/${filename}`, content, err => {
+        return
     })
 
+    await Blog.create({
+        title: title,
+        filename: filename,
+        cover: cover,
+        description: description,
+        tags: tags ? tags : null,
+        updatedAt: new Date()
+    })
+
+    res.end()
+})
+
+router.delete('/:filename', async (req, res) => {
+    const { filename } = req.params
+    await Blog.destroy({
+        where: {
+            filename: filename
+        }
+    })
+    fs.unlink(`${BLOG_PATH}/${filename}`, err => {
+        console.log(err)
+    })
     res.end()
 })
 

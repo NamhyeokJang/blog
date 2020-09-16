@@ -1,6 +1,7 @@
 /backend/node_modules
 /backend/blog
 /backend/images
+/backend/blog_images
 /backend/build
 /backend/.env
 
