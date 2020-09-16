@@ -50,6 +50,7 @@
 }
 
 .blog__desc {
+    height: 63px;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -103,6 +104,8 @@
     }
 
     .blog__desc {
+        height: 40px;
+        margin-bottom: 10px;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2; /* 라인수 */ 
